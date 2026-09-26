@@ -1,0 +1,22 @@
+<emane-tdma-schedule>
+  <structure frames="1" slots="5" slotoverhead="50" slotduration="1500" bandwidth="1M"/>
+  <multiframe frequency="2.4G" power="0" class="0" datarate="1M">
+    <frame index="0">
+      <slot index="0" nodes="1,4,10,16">
+        <tx/>
+      </slot>
+      <slot index="1" nodes="2,8,9,15">
+        <tx/>
+      </slot>
+      <slot index="2" nodes="3,5,11">
+        <tx/>
+      </slot>
+      <slot index="3" nodes="6,12,13">
+        <tx/>
+      </slot>
+      <slot index="4" nodes="7,14">
+        <tx/>
+      </slot>
+    </frame>
+  </multiframe>
+</emane-tdma-schedule>

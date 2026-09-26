@@ -1,0 +1,44 @@
+{
+  "radio_range_m": 500.0,
+  "node_count": 3,
+  "slot_count": 3,
+  "node_to_slot": {
+    "A": 0,
+    "B": 1,
+    "C": 2
+  },
+  "slot_to_nodes": {
+    "0": [
+      "A"
+    ],
+    "1": [
+      "B"
+    ],
+    "2": [
+      "C"
+    ]
+  },
+  "matrix": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ]
+  ],
+  "node_order": [
+    "A",
+    "B",
+    "C"
+  ],
+  "validation_status": "VALID"
+}

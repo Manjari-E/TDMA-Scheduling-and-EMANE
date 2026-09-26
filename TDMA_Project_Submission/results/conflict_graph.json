@@ -1,0 +1,25 @@
+{
+  "nodes": [
+    "A",
+    "B",
+    "C"
+  ],
+  "edges": [
+    {
+      "node_a": "A",
+      "node_b": "B",
+      "type": "1-hop"
+    },
+    {
+      "node_a": "A",
+      "node_b": "C",
+      "type": "2-hop",
+      "via": "B"
+    },
+    {
+      "node_a": "B",
+      "node_b": "C",
+      "type": "1-hop"
+    }
+  ]
+}

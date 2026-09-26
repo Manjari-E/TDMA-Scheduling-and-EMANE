@@ -1,0 +1,77 @@
+{
+  "input": {
+    "node_count": 3,
+    "radio_range_m": 500.0
+  },
+  "communication_graph": {
+    "nodes": 3,
+    "edges": 2,
+    "degree_min": 1,
+    "degree_average": 1.3333,
+    "degree_max": 2,
+    "connected": true,
+    "components": [
+      [
+        "A",
+        "B",
+        "C"
+      ]
+    ],
+    "isolated_nodes": []
+  },
+  "conflict_graph": {
+    "one_hop_conflicts": 2,
+    "two_hop_conflicts": 1,
+    "total_conflict_edges": 3,
+    "maximum_conflict_degree": 2
+  },
+  "optimization": {
+    "best_heuristic": "greedy (input order)",
+    "heuristic_slots": {
+      "greedy (input order)": 3,
+      "greedy (largest-first)": 3,
+      "greedy (smallest-last)": 3,
+      "DSATUR": 3,
+      "random restarts (x300)": 3
+    },
+    "baseline_slots": 3,
+    "slots_before_compaction": 3,
+    "slots_used": 3,
+    "lower_bound": 3,
+    "proven_optimal_for_instance": true,
+    "random_restarts": 300
+  },
+  "schedule": {
+    "slot_count": 3,
+    "nodes_per_slot_min": 1,
+    "nodes_per_slot_average": 1.0,
+    "nodes_per_slot_max": 1,
+    "node_to_slot": {
+      "A": 0,
+      "B": 1,
+      "C": 2
+    },
+    "slot_to_nodes": {
+      "0": [
+        "A"
+      ],
+      "1": [
+        "B"
+      ],
+      "2": [
+        "C"
+      ]
+    }
+  },
+  "validation": {
+    "status": "VALID",
+    "violations": 0,
+    "errors": []
+  },
+  "spatial_reuse": {
+    "slots_with_reuse": 0,
+    "slots_without_reuse": 3,
+    "slots_actually_used": 3,
+    "reuse_pair_count": 0
+  }
+}

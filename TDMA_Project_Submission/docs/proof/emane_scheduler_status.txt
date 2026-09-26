@@ -1,0 +1,6 @@
+nem 1   mac  scheduler.scheduleAcceptFull = 1
+nem 1   mac  scheduler.scheduleAcceptUpdate = 0
+nem 1   mac  scheduler.scheduleRejectFrameIndexRange = 0
+nem 1   mac  scheduler.scheduleRejectOther = 0
+nem 1   mac  scheduler.scheduleRejectSlotIndexRange = 0
+nem 1   mac  scheduler.scheduleRejectUpdateBeforeFull = 0

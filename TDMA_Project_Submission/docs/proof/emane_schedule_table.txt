@@ -1,0 +1,16 @@
+nem 1   mac scheduler.ScheduleInfoTable
+| Index | Frame | Slot | Type | Frequency  | Data Rate | Power | Class | Destination |
+| 0     | 0     | 0    | TX   | 2400000000 | 1000000   | 0.0   | 0     | 0           |
+| 1     | 0     | 1    | RX   | 2400000000 |           |       |       |             |
+| 2     | 0     | 2    | RX   | 2400000000 |           |       |       |             |
+| 3     | 0     | 3    | RX   | 2400000000 |           |       |       |             |
+| 4     | 0     | 4    | RX   | 2400000000 |           |       |       |             |
+
+nem 1   mac scheduler.StructureInfoTable
+| Name         | Value   |
+| bandwidth    | 1000000 |
+| frames       | 1       |
+| slotduration | 1500    |
+| slotoverhead | 50      |
+| slots        | 5       |
+

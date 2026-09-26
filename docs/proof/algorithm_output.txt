@@ -1,0 +1,179 @@
+
+================================================================
+1. INPUT COORDINATES (metres)
+================================================================
+Node                 X         Y
+Node_01            0.0       0.0
+Node_02          420.0      60.0
+Node_03          850.0     -40.0
+Node_04         1280.0      30.0
+Node_05          -30.0     430.0
+Node_06          400.0     480.0
+Node_07          810.0     400.0
+Node_08         1250.0     470.0
+Node_09           60.0     900.0
+Node_10          450.0     850.0
+Node_11          880.0     920.0
+Node_12         1300.0     880.0
+Node_13           10.0    1350.0
+Node_14          470.0    1300.0
+Node_15          900.0    1380.0
+Node_16         1350.0    1320.0
+
+================================================================
+2. COMMUNICATION GRAPH
+================================================================
+Radio range        : 500.0 m (connected when distance <= range)
+Nodes              : 16
+Communication edges: 23
+Degree min/avg/max : 2 / 2.88 / 4
+Connected          : yes
+
+Edges (derived from coordinates):
+  Node_01 -- Node_02   (424.3 m)
+  Node_01 -- Node_05   (431.0 m)
+  Node_02 -- Node_03   (441.5 m)
+  Node_02 -- Node_06   (420.5 m)
+  Node_03 -- Node_04   (435.7 m)
+  Node_03 -- Node_07   (441.8 m)
+  Node_04 -- Node_08   (441.0 m)
+  Node_05 -- Node_06   (432.9 m)
+  Node_05 -- Node_09   (478.5 m)
+  Node_06 -- Node_07   (417.7 m)
+  Node_06 -- Node_10   (373.4 m)
+  Node_07 -- Node_08   (445.5 m)
+  Node_08 -- Node_12   (413.0 m)
+  Node_09 -- Node_10   (393.2 m)
+  Node_09 -- Node_13   (452.8 m)
+  Node_10 -- Node_11   (435.7 m)
+  Node_10 -- Node_14   (450.4 m)
+  Node_11 -- Node_12   (421.9 m)
+  Node_11 -- Node_15   (460.4 m)
+  Node_12 -- Node_16   (442.8 m)
+  Node_13 -- Node_14   (462.7 m)
+  Node_14 -- Node_15   (437.4 m)
+  Node_15 -- Node_16   (454.0 m)
+
+Neighbours:
+  Node_01 [deg 2]: 02, 05
+  Node_02 [deg 3]: 01, 03, 06
+  Node_03 [deg 3]: 02, 04, 07
+  Node_04 [deg 2]: 03, 08
+  Node_05 [deg 3]: 01, 06, 09
+  Node_06 [deg 4]: 02, 05, 07, 10
+  Node_07 [deg 3]: 03, 06, 08
+  Node_08 [deg 3]: 04, 07, 12
+  Node_09 [deg 3]: 05, 10, 13
+  Node_10 [deg 4]: 06, 09, 11, 14
+  Node_11 [deg 3]: 10, 12, 15
+  Node_12 [deg 3]: 08, 11, 16
+  Node_13 [deg 2]: 09, 14
+  Node_14 [deg 3]: 10, 13, 15
+  Node_15 [deg 3]: 11, 14, 16
+  Node_16 [deg 2]: 12, 15
+
+================================================================
+3. CONFLICT GRAPH (pairs that must NOT share a slot)
+================================================================
+1-hop conflicts    : 23
+2-hop conflicts    : 32
+Total conflict edges: 55
+Max conflict degree: 10 (Node_10)
+(use --verbose to list every conflicting pair)
+
+================================================================
+4. DISTANCE-2 COLOURING (colour = TDMA slot)
+================================================================
+Heuristic                        Slots
+greedy (input order)                 5
+greedy (largest-first)               6
+greedy (smallest-last)               5
+DSATUR                               5
+random restarts (x300)               5
+
+Baseline (greedy, JSON order): 5 slots
+Best found                   : 5 slots  <- greedy (input order)
+Improvement over baseline    : 0 slot(s)
+Lower bound (largest clique) : 5 slots
+Optimality                   : PROVEN optimal (slots == lower bound)
+
+================================================================
+5. NODE -> SLOT MAPPING
+================================================================
+  Node_01 -> Slot 0
+  Node_02 -> Slot 1
+  Node_03 -> Slot 2
+  Node_04 -> Slot 0
+  Node_05 -> Slot 2
+  Node_06 -> Slot 3
+  Node_07 -> Slot 4
+  Node_08 -> Slot 1
+  Node_09 -> Slot 1
+  Node_10 -> Slot 0
+  Node_11 -> Slot 2
+  Node_12 -> Slot 3
+  Node_13 -> Slot 3
+  Node_14 -> Slot 4
+  Node_15 -> Slot 1
+  Node_16 -> Slot 0
+
+Slot -> Nodes:
+  Slot 00: Node_01, Node_04, Node_10, Node_16
+  Slot 01: Node_02, Node_08, Node_09, Node_15
+  Slot 02: Node_03, Node_05, Node_11
+  Slot 03: Node_06, Node_12, Node_13
+  Slot 04: Node_07, Node_14
+
+================================================================
+6. SLOT x NODE MATRIX (1 = node transmits in that slot)
+================================================================
+Slot \ Node | 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16
+------------+-------------------------------------------------
+Slot 00     |  1  0  0  1  0  0  0  0  0  1  0  0  0  0  0  1
+Slot 01     |  0  1  0  0  0  0  0  1  1  0  0  0  0  0  1  0
+Slot 02     |  0  0  1  0  1  0  0  0  0  0  1  0  0  0  0  0
+Slot 03     |  0  0  0  0  0  1  0  0  0  0  0  1  1  0  0  0
+Slot 04     |  0  0  0  0  0  0  1  0  0  0  0  0  0  1  0  0
+
+================================================================
+7. SPATIAL REUSE
+================================================================
+Slots used by more than one node: 5 of 5
+Slots without reuse would be     : 16 (one per node)
+Slots actually used              : 5
+Closest reusing pair (hops)      : 3  (must be >= 3)
+
+Examples (same slot, why it is allowed):
+  Slot 0: Node_01 & Node_04  ->  1280.4 m, 3 hops apart
+  Slot 0: Node_01 & Node_10  ->   961.8 m, 3 hops apart
+  Slot 0: Node_01 & Node_16  ->  1888.1 m, 6 hops apart
+  Slot 0: Node_04 & Node_10  ->  1166.7 m, 4 hops apart
+  Slot 0: Node_04 & Node_16  ->  1291.9 m, 3 hops apart
+  Slot 0: Node_10 & Node_16  ->  1015.3 m, 3 hops apart
+  Slot 1: Node_02 & Node_08  ->   925.7 m, 3 hops apart
+  Slot 1: Node_02 & Node_09  ->   913.9 m, 3 hops apart
+  ... 11 more (use --verbose)
+
+========================================
+TDMA SCHEDULE VALIDATION
+========================================
+Nodes              : 16
+Conflicting Pairs  : 55
+Slots Used         : 5
+Violations         : 0
+Status             : VALID
+========================================
+
+================================================================
+8. FINAL STATISTICS
+================================================================
+Nodes                 : 16
+Communication edges   : 23
+Conflict edges        : 55
+Heuristic used        : greedy (input order)
+Slots used            : 5
+Lower bound           : 5
+Nodes per slot (min/avg/max): 2 / 3.20 / 4
+Validation            : VALID
+
+Results written to results

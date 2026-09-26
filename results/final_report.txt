@@ -1,0 +1,99 @@
+
+================================================================
+1. INPUT COORDINATES (metres)
+================================================================
+Node                 X         Y
+A                  0.0       0.0
+B                400.0       0.0
+C                800.0       0.0
+
+================================================================
+2. COMMUNICATION GRAPH
+================================================================
+Radio range        : 500.0 m (connected when distance <= range)
+Nodes              : 3
+Communication edges: 2
+Degree min/avg/max : 1 / 1.33 / 2
+Connected          : yes
+
+Edges (derived from coordinates):
+  A -- B   (400.0 m)
+  B -- C   (400.0 m)
+
+Neighbours:
+  A [deg 1]: B
+  B [deg 2]: A, C
+  C [deg 1]: B
+
+================================================================
+3. CONFLICT GRAPH (pairs that must NOT share a slot)
+================================================================
+1-hop conflicts    : 2
+2-hop conflicts    : 1
+Total conflict edges: 3
+Max conflict degree: 2 (C)
+(use --verbose to list every conflicting pair)
+
+================================================================
+4. DISTANCE-2 COLOURING (colour = TDMA slot)
+================================================================
+Heuristic                        Slots
+greedy (input order)                 3
+greedy (largest-first)               3
+greedy (smallest-last)               3
+DSATUR                               3
+random restarts (x300)               3
+
+Baseline (greedy, JSON order): 3 slots
+Best found                   : 3 slots  <- greedy (input order)
+Improvement over baseline    : 0 slot(s)
+Lower bound (largest clique) : 3 slots
+Optimality                   : PROVEN optimal (slots == lower bound)
+
+================================================================
+5. NODE -> SLOT MAPPING
+================================================================
+  A -> Slot 0
+  B -> Slot 1
+  C -> Slot 2
+
+Slot -> Nodes:
+  Slot 00: A
+  Slot 01: B
+  Slot 02: C
+
+================================================================
+6. SLOT x NODE MATRIX (1 = node transmits in that slot)
+================================================================
+Slot \ Node | A B C
+------------+-------
+Slot 00     | 1 0 0
+Slot 01     | 0 1 0
+Slot 02     | 0 0 1
+
+================================================================
+7. SPATIAL REUSE
+================================================================
+No slot is shared: every node has its own slot.
+
+========================================
+TDMA SCHEDULE VALIDATION
+========================================
+Nodes              : 3
+Conflicting Pairs  : 3
+Slots Used         : 3
+Violations         : 0
+Status             : VALID
+========================================
+
+================================================================
+8. FINAL STATISTICS
+================================================================
+Nodes                 : 3
+Communication edges   : 2
+Conflict edges        : 3
+Heuristic used        : greedy (input order)
+Slots used            : 3
+Lower bound           : 3
+Nodes per slot (min/avg/max): 1 / 1.00 / 1
+Validation            : VALID
